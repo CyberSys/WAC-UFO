@@ -50,11 +50,11 @@ concommand.Add("wac_cl_air_spawn", function(ply,cmd,args)
 			ent.wheels[i]:SetRenderMode(RENDERMODE_TRANSALPHA)
 			ent.wheels[i]:SetColor(Color(255,255,255,0))
 		end
-		undo.Create( "WACUFO" )
+		undo.Create( "wacufo" )
 			undo.AddEntity(ent)
 			undo.SetPlayer(ply)
 		undo.Finish()
-		hook.Call("PlayerSpawnedSENT", gmod.GetGamemode(), ply, ent)
+		gamemode.Call("PlayerSpawnedSENT", ply, ent)
 	else
 		print("um no")
 	end

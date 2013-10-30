@@ -6,51 +6,57 @@ ENT.Type 			= "anim"
 ENT.Category		= "theres nothing here"
 ENT.PrintName		= "Jupiter 2"
 ENT.Author			= "SentryGunMan, Dr. Matt, Hornetnest, Weltensturm"
-ENT.Spawnable		= false
-ENT.AdminSpawnable		= false
+ENT.Spawnable		= true
+ENT.AdminSpawnable		= true
 ENT.AutomaticFrameAdvance = true // anims
+
 ENT.Model		= "models/sentry/jupiter2.mdl"
-ENT.RotorPhModel	= "models/props_junk/sawblade001a.mdl"
-ENT.RotorModel	= "models/props_junk/sawblade001a.mdl"
-ENT.BackRotorModel    = "models/props_junk/sawblade001a.mdl"
-ENT.BackRotorDir	= -1
-ENT.TopRotorPos	= Vector(0,0,121)
-ENT.BackRotorPos	= Vector(0,0,121)
-ENT.RotorWidth		= 10
 ENT.EngineForce	= 34
 ENT.Weight		= 24551
-ENT.SeatSwitcherPos	= Vector(0,0,0)
 ENT.AngBrakeMul	= 0.012
 ENT.SmokePos	= Vector(0,0,121)
 ENT.FirePos		= Vector(0,0,121)
+
+ENT.TopRotor = {
+	dir = -1,
+	pos = Vector(0,0,121),
+	model = "models/props_junk/sawblade001a.mdl",
+}
+ 
+ENT.BackRotor = {
+	dir = -1,
+	pos = Vector(0,0,121),
+	model = "models/props_junk/sawblade001a.mdl",
+}
 
 if CLIENT then
 	ENT.thirdPerson = {
 		distance = 1500
 	}
+	language.Add("Undone_wacufo", "Undone WAC UFO")
 end
 
 ENT.Wheels={
 	{
-		mdl="models/sentry/fa18_fw.mdl",
+		mdl="models/sentry/fa18fw.mdl",
 		pos=Vector(-168,168,12),
 		friction=100,
 		mass=550,
 	},
 	{
-		mdl="models/sentry/fa18_fw.mdl",
+		mdl="models/sentry/fa18fw.mdl",
 		pos=Vector(-168,-168,12),
 		friction=100,
 		mass=550,
 	},
 	{
-		mdl="models/sentry/fa18_fw.mdl",
+		mdl="models/sentry/fa18fw.mdl",
 		pos=Vector(168,168,12),
 		friction=100,
 		mass=550,
 	},
 	{
-		mdl="models/sentry/fa18_fw.mdl",
+		mdl="models/sentry/fa18fw.mdl",
 		pos=Vector(168,-168,12),
 		friction=100,
 		mass=550,
@@ -69,7 +75,7 @@ ENT.Seats = {
 	},
 }
 
-ENT.Sounds={
+ENT.Sounds = {
 	Start="WAC/Jup2/start.wav",
 	Blades="WAC/jup2/external.wav",
 	Engine="WAC/jup2/internal.wav",
